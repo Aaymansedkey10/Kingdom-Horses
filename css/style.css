@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Tajawal", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+img{
+    height: 80vh;
+    /* object-fit: contain; */
+}
+.position-fixed {
+    z-index: 15;
+    /* box-sizing: content-box; */
+}
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 13.25rem;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+}
