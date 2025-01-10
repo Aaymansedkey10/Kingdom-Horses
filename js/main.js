@@ -37,10 +37,10 @@ buttons.forEach(button => {
         contents.forEach(content => {
             if(content.id === targetId) {
                 content.classList.toggle('d-none');
-                content.classList.add('active-content');
+                content.classList.add('active-co');
             }else{
                 content.classList.add('d-none');
-                content.classList.remove('active-content');
+                // content.classList.remove('active-content');
 
             }
         });
