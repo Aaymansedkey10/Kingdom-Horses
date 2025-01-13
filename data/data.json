@@ -1,0 +1,161 @@
+{
+    "status":true,
+    "message":"تم الحصول على البيانات بنجاح",
+    "navBar":[
+        {
+            "id":1,
+            "title":"الرئيسية",
+            "link":"/"
+        },
+        {
+            "id":2,
+            "title":"خدماتنا",
+            "link":"#service"
+        },
+        {
+            "id":3,
+            "title":"من نحن",
+            "link":"#about"
+        },
+        {
+            "id":4,
+            "title":"الموقع",
+            "link":"#area"
+        },
+        {
+            "id":5,
+            "title":"اتصل بنا",
+            "link":"#contact"
+        }
+    ],
+    "slider":[
+        {
+            "id":1,
+            "image":"images/DALL·E 2025-01-03 17.02.02 - A professional and clean design image for a furniture moving company slider. The image should feature a modern truck with the company logo, neatly pac.webp",
+            "title":"استلام الاثاث",
+            "details":"نقوم بتقديم خدمات استلام الاثاث بالجدة والخريطة الخاصة بالجدة لجميع الفئات."
+        },
+        {
+            "id":2,
+            "image":"images/DALL·E 2025-01-03 17.02.02 - A professional and clean design image for a furniture moving company slider. The image should feature a modern truck with the company logo, neatly pac.webp",
+            "title":"توصيل الاثاث",
+            "details":"نقوم بتقديم خدمات توصيل الاثاث بالجدة والخريطة الخاصة بالجدة لجميع الفئات."
+        },
+        {
+            "id":3,
+            "image":"images/DALL·E 2025-01-03 17.02.02 - A professional and clean design image for a furniture moving company slider. The image should feature a modern truck with the company logo, neatly pac.webp",
+            "title":"نقل الاثاث",
+            "details":"نقوم بتقديم خدمات نقل الاثاث بالجدة والخريطة الخاصة بالجدة لجميع الفئات."
+        },
+        {
+            "id":4,
+            "image":"images/DALL·E 2025-01-03 17.02.02 - A professional and clean design image for a furniture moving company slider. The image should feature a modern truck with the company logo, neatly pac.webp",
+            "title":"استلام الاثاث",
+            "details":"نقوم بتقديم خدمات استلام الاثاث بالجدة والخريطة الخاصة بالجدة لجميع الفئات."
+        }
+    ],
+    "aboutUs":[
+        {
+            "id":1,
+            "title":"من نحن",
+            "details":"نقوم بتقديم خدمات استلام الاثاث بالجدة والخريطة الخاصة بالجدة لجميع الفئات."
+        },
+        {
+            "id":2,
+            "title":"من نحن",
+            "details":"نقوم بتقديم خدمات استلام الاثاث بالجدة والخريطة الخاصة بالجدة لجميع الفئات."
+        },
+        {
+            "id":3,
+            "title":"من نحن",
+            "details":"نقوم بتقديم خدمات استلام الاثاث بالجدة والخريطة الخاصة بالجدة لجميع الفئات."
+        },
+        {
+            "id":4,
+            "title":"من نحن",
+            "details":"نقوم بتقديم خدمات استلام الاثاث بالجدة والخريطة الخاصة بالجدة لجميع الفئات."
+        },
+        {
+            "id":5,
+            "title":"من نحن",
+            "details":"نقوم بتقديم خدمات استلام الاثاث بالجدة والخريطة الخاصة بالجدة لجميع الفئات."
+        }
+    ],
+    "services":[
+        {
+            "id":1,
+            "title":"استلام الاثاث",
+            "image":"images/future-home-1.jpg.webp",
+            "details":"نقوم بتقديم خدمات استلام الاثاث بالجدة والخريطة الخاصة بالجدة لجميع الفئات."
+        },
+        {
+            "id":2,
+            "title":"توصيل الاثاث",
+            "image":"images/future-home-1.jpg.webp",
+            "details":"نقوم بتقديم خدمات توصيل الاثاث بالجدة والخريطة الخاصة بالجدة لجميع الفئات."
+        },
+        {
+            "id":3,
+            "title":"نقل الاثاث",
+            "image":"images/future-home-1.jpg.webp",
+            "details":"نقوم بتقديم خدمات نقل الاثاث بالجدة والخريطة الخاصة بالجدة لجميع الفئات."
+        },
+        {
+            "id":4,
+            "title":"استلام الاثاث",
+            "image":"images/future-home-1.jpg.webp",
+            "details":"نقوم بتقديم خدمات استلام الاثاث بالجدة والخريطة الخاصة بالجدة لجميع الفئات."
+        },
+        {
+            "id":5,
+            "title":"نقل المكاتب",
+            "image":"images/future-home-1.jpg.webp",
+            "details":"خدمة مخصصة لنقل أثاث الشركات والمكاتب مع ضمان تقليل وقت التوقف عن العمل."
+        },
+        {
+            "id":6,
+            "title":"التغليف الاحترافي",
+            "image":"images/future-home-1.jpg.webp",
+            "details":"نوفر تغليفًا عالي الجودة لحماية مقتنياتك الثمينة أثناء النقل."
+        },
+        {
+            "id":7,
+            "title":"النقل في جدة",
+            "image":"images/future-home-1.jpg.webp",
+            "details":"خدمة مريحة وآمنة للنقل الأثاث في جميع أنجاء جدة."
+        },
+        {
+            "id":8,
+            "title":"التأمين",
+            "image":"images/future-home-1.jpg.webp",
+            "details":"نضمن راحة بالك من خلال التأمين على الأثاث أثناء النقل."
+        },
+        {
+            "id":9,
+            "title":"استلام الاثاث",
+            "image":"images/future-home-1.jpg.webp",
+            "details":"نقوم بتقديم خدمات استلام الاثاث بالجدة والخريطة الخاصة بالجدة لجميع الفئات."
+        }
+    ],
+    "providers":[
+        {
+            "id":1,
+            "image":"images/Untitled-design-3.png",
+            "title":"خدمة على مدار الساعة ",
+            "details":"لدينا فريق متخصص في نقل العفش ويعمل على مدار الساعة و في ايام العطل و العطل الاسبوعية, فلا تترد في ال+9660530403275 في اي وقت تريد."
+        },
+        {
+            "id":2,
+            "image":"images/Untitled-design-3.png",
+            "title":"خدمة العملاء المتميزة",
+            "details":"سوف نقوم بتقديم أفضل خدمة لعملائنا , و التي نسعى من خلالها الى الحفاظ على عملائنا وتقدم أفضل خدمة نقل عفش في جميع انحاء جده."
+        },
+        {
+            "id":3,
+            "image":"images/Untitled-design-3.png",
+            "title":"اسعار تنافسية ",
+            "details":"عند بحثك عن شركة نقل العفش , لا تبحث فقط عن الاسعار الرخيصة فقط , بل اعرف ما هي الخدمات المقدمة لك , نحن سوف نقدم لك خدمات احترافية مع اسعار منافسة ومميزة."
+        }
+    ],
+    "Error":"لا يوجد بيانات"
+}
