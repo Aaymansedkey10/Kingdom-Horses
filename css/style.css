@@ -25,6 +25,7 @@ body {
     font-family: "Tajawal", serif;
     font-style: normal;
     background-color: #e7e7e70e;
+    scroll-behavior: smooth;
 }
 
 /* global style for button  */
@@ -45,7 +46,6 @@ body {
 
 h2 {
     font-size: 40px;
-    /* padding: 0px; */
 }
 
 .border-under-bottom {
@@ -53,6 +53,56 @@ h2 {
     height: 3px;
     background: var(--bg-button);
     margin: auto;
+}
+
+/* change the scroll bar design  */
+/* Scrollbar container */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+    height: 10px; /* Height of the scrollbar (for horizontal scrollbars) */
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: var(--bg-hover-button); /* Light grey background */
+    border-radius: 5px;
+}
+
+/* Thumb (scrolling handle) */
+::-webkit-scrollbar-thumb {
+    background: var(--bg-button); /* Blue handle */
+    border-radius: 5px;
+    border: 2px solid #f4f4f4; /* Adds padding effect */
+}
+
+/* Thumb when hovered */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bg-button); /* Darker blue when hovered */
+}
+
+/* Corner (intersection of horizontal and vertical scrollbars) */
+::-webkit-scrollbar-corner {
+    background: transparent; /* Optional: transparent or match your theme */
+}
+
+/* Firefox scrollbar customization */
+* {
+    scrollbar-width: thin; /* Makes scrollbar thinner */
+    scrollbar-color: var(--bg-button) #f4f4f4; /* Thumb color, Track color */
+}
+
+
+/* Initial state (hidden content) */
+.content {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Animation when content becomes visible */
+.content.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* start navbar */
@@ -195,12 +245,19 @@ h2 {
 /* start about section */
 
 .active-content {
-    border-bottom: 2px solid var(--bg-button) !important;
+    border: 1px solid var(--bg-button) !important;
+    transition: var(--transtion);
 }
+.border-bottom-controller{
+    border-bottom:1px solid var(--bg-button) !important;
+}
+/* .about-content .controllers{
+    border: 1px solid var(--bg-button);
+} */
 
 .about-content .controllers .controller {
-    /* width: 200px; */
     color: var(--bg-button);
+    border-color: var(--bg-button) ;
 }
 
 /* end about section */

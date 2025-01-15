@@ -18,7 +18,8 @@ butttonToShowConettionButtons.addEventListener("click", () => {
 })
 
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",() => {
+    showElements();
     let navBar = document.getElementById("navBar");
     let containerButtonConnection = document.getElementById("container-button-connection");
     if (window.scrollY > 0) {
@@ -30,9 +31,11 @@ window.addEventListener("scroll", () => {
     }
 })
 
-
-
-
+// call function for show data 
+getData("navBar");
+getData("aboutUs");
+getData("services");
+getData("providers");
 
 // funtion for get data from json 
 async function getData(key) {
@@ -48,68 +51,80 @@ async function getData(key) {
                                 </li>`
                 navBar.innerHTML += itemLink;
             });
-        }
-        // if(key==="aboutUs") {
-        //     let aboutUs = document.getElementById("controllers");
-        //     data[key].forEach(link => {
-        //         let itemLink =
-        //          `<div class="active-content content-who-we">
-        //         <button class="border-0 bg-body w-100 text-end controller" data-target="who-we">${link.title}</button>
-        //         <div class="d-none p-2 mb-2 mt-1 rounded-0 content-area" id="who-we"> ${link.details} </div>
-        //       </div>`
-        //         aboutUs.innerHTML += itemLink;
-        //     });
-        //     let buttons = document.querySelectorAll(".controller");
-        //     let contents = document.querySelectorAll(".content-area");  
-        //     buttons.forEach(button => {
-        //         // getData("aboutUs");
-        //         button.addEventListener("click", () => {
-        //             const targetId = button.getAttribute("data-target");
-        //             contents.forEach(content => {
-        //                 if(content.id === targetId) {
-        //                     content.classList.toggle('d-none');
-        //                     content.classList.add('active-content');
-        //                 }else{
-        //                     content.classList.add('d-none');
-        //                     // content.classList.remove('active-content');
-            
-        //                 }
-        //             });
-        //         });
-        //     });
-        // }
+        } 
         if (key === "aboutUs") {
             let aboutUs = document.getElementById("controllers");
+        
             data[key].forEach((link, index) => {
                 let uniqueId = `section-${index}`;
-                let itemLink = `
-                    <div class="active-content content-who-we">
-                        <button class="border-0 bg-body w-100 text-end controller" data-target="${uniqueId}">
-                            ${link.title}
-                        </button>
-                        <div class="d-none p-2 mb-2 mt-1 rounded-0 content-area" id="${uniqueId}">
-                            ${link.details}
-                        </div>
-                    </div>`;
-                aboutUs.innerHTML += itemLink;
-            });
-            let buttons = document.querySelectorAll(".controller");
-            let contents = document.querySelectorAll(".content-area");
+                let aboutContentFromJson = link.details;
+                let itemLink = "";
         
-            buttons.forEach(button => {
+                // Check if details is not an array
+                if (!Array.isArray(aboutContentFromJson)) {
+                    itemLink = `
+                        <div class="active-content rounded mb-2">
+                            <div class="d-flex align-items-center justify-content-between p-2 controller">
+                                <button class="border-0 bg-body fw-bold w-100 text-end controller-button" data-target="${uniqueId}">
+                                    ${link.title}
+                                </button>
+                                <span class="cont"> <i class="bi bi-caret-down"></i></span>    
+                            </div>
+                            <div class="d-none px-2 mb-2 mt-1 rounded-0 content-area" id="${uniqueId}">
+                                <p>${aboutContentFromJson}</p>
+                            </div>
+                        </div>`;
+                    aboutUs.innerHTML += itemLink;
+                } else {
+                    let listItems = aboutContentFromJson
+                        .map((element) => {
+                            return element.content
+                                ? `<li>${element.content}</li>`
+                                : `<li>Content not available</li>`;
+                        })
+                        .join("");
+        
+                    itemLink = `
+                        <div class="active-content rounded mb-2">
+                            <div class="d-flex align-items-center justify-content-between p-2 controller">
+                                <button class="border-0 bg-body fw-bold w-100 text-end controller-button" data-target="${uniqueId}">
+                                    ${link.title}
+                                </button>
+                                <span class="cont"><i class="bi bi-caret-down"></i></span>    
+                            </div>
+                            <div class="d-none px-2 mb-2 mt-1 content-area" id="${uniqueId}">
+                                <ul class="m-0 px-3">${listItems}</ul>
+                            </div>
+                        </div>`;
+                    aboutUs.innerHTML += itemLink;
+                }
+            });
+            // add event to show content 
+            let buttons = document.querySelectorAll(".controller-button");
+            let contents = document.querySelectorAll(".content-area");
+            let controller = document.querySelectorAll(".controller");
+        
+            buttons.forEach((button) => {
                 button.addEventListener("click", () => {
                     const targetId = button.getAttribute("data-target");
-                    contents.forEach(content => {
+                    contents.forEach((content) => {
                         if (content.id === targetId) {
-                            content.classList.toggle('d-none');
-                        } else {
-                            content.classList.add('d-none');
+                            const span = button.nextElementSibling;
+                            const parent = button.parentElement;
+                            if (content.classList.contains("d-none")) {
+                                content.classList.remove("d-none");
+                                span.innerHTML = '<i class="bi bi-caret-up"></i>';
+                                parent.classList.add("border-bottom-controller");
+                            } else {
+                                content.classList.add("d-none");
+                                span.innerHTML = '<i class="bi bi-caret-down"></i>';
+                                parent.classList.remove("border-bottom-controller");
+                            }
                         }
                     });
                 });
             });
-        }
-
+        }        
         if(key === "services") {
             let services = document.getElementById("services");
             data[key].forEach(link => {
@@ -148,8 +163,18 @@ async function getData(key) {
     }
     
 }
-
-getData("navBar");
-getData("aboutUs");
-getData("services");
-getData("providers");
+// show elements when scroll 
+function showElements() {
+    const elements = document.querySelectorAll('.content');
+    elements.forEach((element) => {
+      const windowHeight = window.innerHeight;
+      const revealTop = element.getBoundingClientRect().top;
+      const revealPoint = 100;
+  
+      if (revealTop < windowHeight - revealPoint) {
+        element.classList.add('visible');
+      } else {
+        element.classList.remove('visible');
+      }
+    });
+  }
