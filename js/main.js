@@ -1,7 +1,6 @@
+window.addEventListener("load", ()=>{
 let butttonToShowConettionButtons = document.getElementById("butttonToShowConettionButtons");
 let conettionButtons = document.getElementById("conettionButtons");
-let buttons = document.querySelectorAll(".controller");
-let contents = document.querySelectorAll(".content-area");
 
 butttonToShowConettionButtons.addEventListener("click", () => {
     if (conettionButtons.classList.contains("d-none")) {
@@ -20,23 +19,31 @@ butttonToShowConettionButtons.addEventListener("click", () => {
 
 window.addEventListener("scroll",() => {
     showElements();
-    let navBar = document.getElementById("navBar");
-    let containerButtonConnection = document.getElementById("container-button-connection");
-    if (window.scrollY > 0) {
-       navBar.classList.add("position-fixed-navbar");
-       containerButtonConnection.classList.remove("d-none");
-    }else{
-        navBar.classList.remove("position-fixed-navbar");
-        containerButtonConnection.classList.add("d-none");
-    }
+    navBarFixed();
+   
 })
 
-// call function for show data 
-getData("navBar");
-getData("aboutUs");
-getData("services");
-getData("providers");
 
+    // call function for show data 
+    getData("navBar");
+    getData("aboutUs");
+    getData("services");
+    getData("providers");
+})
+
+// function for fixed navbar
+function navBarFixed(){
+    let navBar = document.getElementById("navBar");
+    let containerButtonConnection = document.getElementById("container-button-connection");
+    if (window.scrollY > 100) {
+        navBar.style.setProperty("box-shadow", " 0 3px 3px #A886CC");
+        containerButtonConnection.classList.remove("d-none");
+    }else{
+        containerButtonConnection.classList.add("d-none");
+        navBar.style.removeProperty("box-shadow", " 0 2px 2px red");
+
+    }
+}
 // funtion for get data from json 
 async function getData(key) {
     let response = await fetch("./data/data.json");
@@ -47,9 +54,10 @@ async function getData(key) {
             let navBar = document.getElementById("nav-bar-list");
             data[key].forEach(link => {
                 let itemLink = `<li class="nav-item">
-                                    <a class="nav-link fw-bold" aria-current="page" href="${link.link}">${link.title}</a>
+                                    <a class="nav-link fw-bold" href="${link.link}">${link.title}</a>
                                 </li>`
                 navBar.innerHTML += itemLink;
+
             });
         } 
         if (key === "aboutUs") {
@@ -64,8 +72,8 @@ async function getData(key) {
                 if (!Array.isArray(aboutContentFromJson)) {
                     itemLink = `
                         <div class="active-content rounded mb-2">
-                            <div class="d-flex align-items-center justify-content-between p-2 controller">
-                                <button class="border-0 bg-body fw-bold w-100 text-end controller-button" data-target="${uniqueId}">
+                            <div class="d-flex align-items-center justify-content-between p-2 controller-container">
+                                <button class="border-0 bg-transparent fw-bold w-100 text-end controller-button" data-target="${uniqueId}">
                                     ${link.title}
                                 </button>
                                 <span class="cont"> <i class="bi bi-caret-down"></i></span>    
@@ -86,8 +94,8 @@ async function getData(key) {
         
                     itemLink = `
                         <div class="active-content rounded mb-2">
-                            <div class="d-flex align-items-center justify-content-between p-2 controller">
-                                <button class="border-0 bg-body fw-bold w-100 text-end controller-button" data-target="${uniqueId}">
+                            <div class="d-flex align-items-center justify-content-between p-2 controller-container">
+                                <button class="border-0 bg-transparent fw-bold w-100 text-end controller-button" data-target="${uniqueId}">
                                     ${link.title}
                                 </button>
                                 <span class="cont"><i class="bi bi-caret-down"></i></span>    
@@ -102,7 +110,7 @@ async function getData(key) {
             // add event to show content 
             let buttons = document.querySelectorAll(".controller-button");
             let contents = document.querySelectorAll(".content-area");
-            let controller = document.querySelectorAll(".controller");
+            let activeContent = document.querySelectorAll(".active-content");
         
             buttons.forEach((button) => {
                 button.addEventListener("click", () => {
@@ -115,6 +123,7 @@ async function getData(key) {
                                 content.classList.remove("d-none");
                                 span.innerHTML = '<i class="bi bi-caret-up"></i>';
                                 parent.classList.add("border-bottom-controller");
+                                button.style.color = "var(--color)";
                             } else {
                                 content.classList.add("d-none");
                                 span.innerHTML = '<i class="bi bi-caret-down"></i>';
@@ -131,11 +140,11 @@ async function getData(key) {
                 let itemLink = `<div class="col-12 col-lg-4 mb-4">
                                     <div class="card overflow-hidden">
                                         <div class=" overflow-hidden">
-                                            <img src="${link.image}" class="card-img-top" alt="...">
+                                            <img src="${link.image}" class="card-img-top" alt="${link.title}">
                                         </div>
                                         <div class="card-body">
-                                            <h3>${link.title}</h3>
-                                            <p class="card-text">${link.details}</p>
+                                            <h3 class="fw-bold text-center">${link.title}</h3>
+                                            <p class="card-text fw-semibold">${link.details}</p>
                                         </div>
                                     </div>
                                 </div>`
@@ -146,13 +155,13 @@ async function getData(key) {
             let providers = document.getElementById("providers");
             data[key].forEach(link => {
                 let itemLink = `<div class="col-12 col-lg-4 mb-4">
-                                <div class="card border-0 overflow-hidden">
+                                <div class="card border overflow-hidden">
                                     <div class="overflow-hidden">
-                                        <img src="${link.image}" class="card-img-top2" alt="...">
+                                        <img src="${link.image}" class="card-img-top" alt="${link.title}">
                                     </div>
                                     <div class="card-body">
-                                    <h3 class="card-title">${link.title}</h3>
-                                    <p class="card-text fw-bold">${link.details}</p>
+                                    <h3 class="fw-bold text-center">${link.title}</h3>
+                                    <p class="card-text fw-semibold">${link.details}</p>
                                     </div>
                                 </div>
                                 </div>`

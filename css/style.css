@@ -1,24 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--bg-main-bg-color) #f4f4f4;
+}
+
 :root {
     --bg-button: #6878d6;
     --bg-hover-button: #ffffff;
     --color-hover-text: #ffffff;
     --color-button-text: #393a56;
     --color-hover-button-text: #393a56;
-    --bg-button-show-conection: #A886CD;
+    --bg-main-bg-color: #A886CD;
     --bg-button-conection: #49E670;
     --width-conection-buttons: 65px;
     --height-conection-buttons: 45px;
     --font-size-text: 20px;
     --font-size-button-small-text: 25px;
-    --width-image-card: 100%;
-    --heigth-image-card: 200px;
-    --transtion: all 0.3s ease-in-out;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    --transtion: all 0.3s ease-in-out !important;
 }
 
 body {
@@ -46,106 +46,71 @@ body {
 
 h2 {
     font-size: 40px;
+    font-weight: bold;
 }
-
 .border-under-bottom {
     width: 60px;
     height: 3px;
-    background: var(--bg-button);
+    background: var(--bg-main-bg-color);
     margin: auto;
 }
-
+.card:hover{
+    transform: scale(1.009);
+    box-shadow: 0 0 10px var(--bg-main-bg-color);
+    transition: var(--transtion);
+}
 /* change the scroll bar design  */
-/* Scrollbar container */
 ::-webkit-scrollbar {
-    width: 10px; /* Width of the scrollbar */
-    height: 10px; /* Height of the scrollbar (for horizontal scrollbars) */
+    width: 10px;
+    height: 10px;
 }
-
-/* Track (background of the scrollbar) */
 ::-webkit-scrollbar-track {
-    background: var(--bg-hover-button); /* Light grey background */
+    background: var(--bg-hover-button);
     border-radius: 5px;
 }
-
-/* Thumb (scrolling handle) */
 ::-webkit-scrollbar-thumb {
-    background: var(--bg-button); /* Blue handle */
+    background: var(--bg-main-bg-color);
     border-radius: 5px;
-    border: 2px solid #f4f4f4; /* Adds padding effect */
+    border: 2px solid #f4f4f4; 
 }
-
-/* Thumb when hovered */
-::-webkit-scrollbar-thumb:hover {
-    background: var(--bg-button); /* Darker blue when hovered */
-}
-
-/* Corner (intersection of horizontal and vertical scrollbars) */
 ::-webkit-scrollbar-corner {
-    background: transparent; /* Optional: transparent or match your theme */
+    background: transparent; 
 }
-
-/* Firefox scrollbar customization */
-* {
-    scrollbar-width: thin; /* Makes scrollbar thinner */
-    scrollbar-color: var(--bg-button) #f4f4f4; /* Thumb color, Track color */
-}
-
-
-/* Initial state (hidden content) */
+/* to show content when scroll  */
 .content {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
-/* Animation when content becomes visible */
 .content.visible {
     opacity: 1;
     transform: translateY(0);
 }
-
 /* start navbar */
-/* .navbar{
-    background-color: var(--bg-hover-button);
-} */
-.position-fixed-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100% !important;
+.navbar{
+    background:transparent ;
     z-index: 100;
-    background-color: var(--bg-hover-button);
-    /* border-bottom: 2px solid var(--bg-button-show-conection); */
+    background-color: var(--bg-hover-button) !important;
 }
-
 .navbar .logo {
-    width: 100px;
-    height: 50px;
+    width: 70px;
     object-fit: cover;
 }
-
 .navbar .navbar-nav .nav-item .nav-link {
     color: var(--color-button-text);
     font-size: 20px;
+    border-bottom: 4px solid transparent;
     transition: var(--transtion);
 }
-
-.navbar .navbar-nav .nav-item .nav-link:hover {
-    color: var(--bg-button-show-conection);
-    /* border-bottom: 2px solid var(--bg-button-show-conection); */
-    text-decoration: underline;
-
+.navbar .navbar-nav .nav-item .nav-link:hover{
+    border-bottom: 4px solid var(--bg-main-bg-color);
 }
-
 .navbar .navbar-toggler {
-    background-color: var(--bg-button-show-conection);
+    background-color: var(--bg-main-bg-color);
     color: var(--color-hover-text) !important;
     font-size: var(--font-size-button-small-text);
     transition: var(--transtion);
 }
-
 /* end navbar */
 
 /* start home section */
@@ -159,39 +124,33 @@ h2 {
     width: 100% !important;
     height: -webkit-fill-available;
 }
-
 .home .carousel-inner .carousel-item {
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
-
 .home .carousel-inner .carousel-item img {
-    height: 90vh;
-    object-fit: cover;
+    height: 85vh;
+    object-fit: fill;
 }
-
 .home .carousel-caption .corousel-content {
     position: relative;
     top: 50%;
     transform: translateY(-50%)
 }
-
 .home .carousel-inner .carousel-item .corousel-content .button-conection-with-us {
-    width: 200px !important;
+    width: 150px !important;
     font-size: var(--font-size-text);
-    height: 60px;
+    height: 45px;
     background-color: var(--bg-hover-button);
     color: var(--color-button-text);
     transition: var(--transtion);
 }
-
 .home .carousel-inner .carousel-item .corousel-content .button-conection-with-us:hover {
-    background-color: var(--color-button-text);
+    background-color: var(--bg-main-bg-color);
     color: var(--bg-hover-button);
 }
-
 .home .carousel-control-prev,
 .home .carousel-control-next {
-    background-color: var(--bg-button-show-conection) !important;
+    background-color: var(--bg-main-bg-color) !important;
     color: var(--color-hover-text);
     opacity: 1;
     height: 50px;
@@ -200,141 +159,119 @@ h2 {
     top: 45%;
     font-size: var(--font-size-text);
 }
-
 .home .carousel-control-prev {
     left: 1%;
 }
-
 .home .carousel-control-next {
     right: 1%;
 }
-
 .home .carousel-control-prev:hover,
 .home .carousel-control-next:hover {
     background-color: var(--bg-hover-button) !important;
     color: var(--color-hover-button-text);
 }
-
 .home .carousel .carousel-indicators button {
     width: 10px;
     height: 10px;
-    background-color: var(--bg-hover-button);
+    background-color: var(--bg-main-bg-color) !important;
     border-radius: 50% !important;
 }
-
 .home .container-button-connection {
     z-index: 100;
 }
-
-.home .buttton-show-conection,
-.home .button-to-top {
-    background-color: var(--bg-button-show-conection);
+.home .container-button-top-connect .button-show-connection,
+.home .container-button-top-connect .button-to-top {
+    background-color: var(--bg-main-bg-color);
     color: var(--color-hover-text);
     transition: var(--transtion);
     font-size: var(--font-size-text);
     width: 45px;
     height: 45px;
 }
-
-.home .buttton-show-conection:hover {
-    background-color: var(--bg-button-show-conection) !important;
-}
-
 /* end home section */
-
-/* start about section */
-
-.active-content {
-    border: 1px solid var(--bg-button) !important;
-    transition: var(--transtion);
-}
-.border-bottom-controller{
-    border-bottom:1px solid var(--bg-button) !important;
-}
-/* .about-content .controllers{
-    border: 1px solid var(--bg-button);
-} */
-
-.about-content .controllers .controller {
-    color: var(--bg-button);
-    border-color: var(--bg-button) ;
-}
-
-/* end about section */
 
 /* start service section */
 .services .card{
-    height: 350px;
+    height: 400px;
+    overflow: hidden;
+} 
+.services .card img{
+    height:250px !important;
+    object-fit: cover;
 }
 /* end service section */
 
-/* start area section */
-/* end area section */
-
-/* start contact section */
-/* end contact section */
-
-/* start footer section */
-/* end footer section */
-
-/* start media query */
-
-/* start navbar  */
-.position-fixed-navbar {
-    top: -2px;
+/* start about section */
+.active-content {
+    border: 1px solid var(--bg-main-bg-color) !important;
+    transition: var(--transtion);
 }
-
-/* start home  */
-.home .carousel-inner .carousel-item .corousel-content {
-    width: 50%;
-    margin: 0 auto;
+.border-bottom-controller{
+    border-bottom:1px solid var(--bg-main-bg-color) !important;
+    background-color: var(--bg-main-bg-color);
+    /* border-start-start-radius: 5px ;*/
+    border-top-left-radius: 5px !important; 
+    border-top-right-radius: 5px !important; 
+    color: #fff !important;
 }
-
-.home .carousel-inner .carousel-item .corousel-content .button-conection-with-us {
-    width: max-content !important;
-    font-size: var(--font-size-button-small-text);
+.about-content .controllers .controller--container {
+    color: var(--bg-main-bg-color);
+    border-color: var(--bg-main-bg-color) ;
 }
+.about-content .controller--container .controller-button {
+    background-color: transparent;
+    border: none;
+}
+/* end about section */
 
-/* end media query */
-
-.card-img-top2 {
-    width: var(--width-image-card);
-    height: var(--heigth-image-card);
+/* start providers section */
+.providers .card{
+    height: 320px;
+    overflow: hidden;
+}
+.providers .card img{
+    height:180px; 
     object-fit: contain;
 }
 
+/* end providers section */
 
+/* start footer section  */
+footer .author-connection a {
+    z-index: 120 !important;
+}
+/* end footer section  */
 
-@keyframes alert-to-conection {
-    0% {
-        transform: translate3d(-3px);
-        /* transform: ; */
+/* start media query */
+@media screen and (max-width: 992px) {
+    /* start navbar  */
+    .navbar {
+        top: -5px !important;
     }
-
-    25% {
-        transform: translate3d(-2px);
+    
+     /* start home  */
+   .home .carousel-inner .carousel-item .corousel-content p {
+        width: 80%;
+        margin: 20px auto;
     }
-
-    50% {
-        transform: translate3d(0px);
+    .home .carousel-control-prev,
+    .home .carousel-control-next {
+        background-color: var(--bg-main-bg-color) !important;
+        color: var(--color-hover-text);
+        opacity: 1;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        top: 45%;
+        font-size: 15px;
     }
-
-    75% {
-        transform: translate3d(2px);
-    }
-
-    100% {
-        transform: translate3d(3px);
+    
+    .home .carousel-inner .carousel-item .corousel-content .button-conection-with-us {
+        width: max-content !important;
+        font-size: var(--font-size-button-small-text);
     }
 }
+/* end media query */
 
 
 
-.card{
-    overflow: hidden;
-}
-
-.card:hover img{
-    transform: scale(1.05);
-    transition: var(--transtion);
-}
