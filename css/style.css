@@ -37,13 +37,16 @@ body {
     width: var(--width-conection-buttons);
     height: var(--height-conection-buttons);
     animation: alert-to-conection 0.5s ease-in-out infinite;
+    z-index: 1;
 
 }
 
 .button-connection:hover {
     border: solid 1px var(--bg-button-conection);
 }
-
+.position-fixed{
+    z-index: 10;
+}
 h2 {
     font-size: 40px;
     font-weight: bold;
@@ -213,9 +216,8 @@ h2 {
     background-color: var(--bg-main-bg-color);
     color: var(--bg-hover-button);
 }
-.home .container-button-connection {
-    z-index: 100;
-}
+/* .home .container-button-connection {
+} */
 .home .container-button-top-connect .button-show-connection,
 .home .container-button-top-connect .button-to-top {
     background-color: var(--bg-main-bg-color);
@@ -224,6 +226,17 @@ h2 {
     font-size: var(--font-size-text);
     width: 45px;
     height: 45px;
+    border-radius: 50% !important;
+}
+
+.home .container-button-top-connect .button-show-connection{
+    right: 10%;
+}
+.home .container-button-top-connect .button-to-top{
+    left: 0.5%;
+}
+.conettion-buttons{
+    width: max-content !important;
 }
 /* end home section */
 
@@ -272,7 +285,11 @@ h2 {
 }
 
 /* end providers section */
-
+/* start contact section  */
+.contact {
+    z-index: 60 !important;
+}
+/* end contact section  */
 /* start footer section  */
 footer .author-connection a {
     z-index: 120 !important;

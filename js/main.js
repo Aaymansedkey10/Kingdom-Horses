@@ -8,7 +8,7 @@ let currentIndex = 0;
 window.addEventListener("load", ()=>{
 let butttonToShowConettionButtons = document.getElementById("butttonToShowConettionButtons");
 
-setInterval(changeBackground, 2000);
+setInterval(changeBackground, 1700);
 changeBackground();
 
 butttonToShowConettionButtons.addEventListener("click", showConnectionButtons);
