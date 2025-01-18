@@ -1,49 +1,31 @@
+let imagesUrl=[
+    "url(./images/slider-1.webp)",
+    "url(./images/slider-2.webp)",
+    "url(./images/slider-3.webp)",
+]
+let currentIndex = 0;
+
 window.addEventListener("load", ()=>{
 let butttonToShowConettionButtons = document.getElementById("butttonToShowConettionButtons");
-let conettionButtons = document.getElementById("conettionButtons");
 
-butttonToShowConettionButtons.addEventListener("click", () => {
-    if (conettionButtons.classList.contains("d-none")) {
-        conettionButtons.classList.remove("d-none");
-        conettionButtons.classList.add("d-flex");
-        let buttonContent = conettionButtons.classList.contains("d-none") ? `<i class="fa-solid fa-comment"></i>` : '<i class="fa-solid fa-xmark"></i>';
-        butttonToShowConettionButtons.innerHTML = buttonContent ;
-    } else {
-        conettionButtons.classList.remove("d-flex");
-        conettionButtons.classList.add("d-none");
-        let buttonContent = conettionButtons.classList.contains("d-none") ? `<i class="fa-solid fa-comment"></i>` : '<i class="fa-solid fa-xmark"></i>';
-        butttonToShowConettionButtons.innerHTML = buttonContent ;
-    }
-})
+setInterval(changeBackground, 2000);
+changeBackground();
 
+butttonToShowConettionButtons.addEventListener("click", showConnectionButtons);
 
 window.addEventListener("scroll",() => {
     showElements();
     navBarFixed();
-   
 })
 
 
-    // call function for show data 
-    getData("navBar");
-    getData("aboutUs");
-    getData("services");
-    getData("providers");
+// call function for show data 
+getData("navBar");
+getData("aboutUs");
+getData("services");
+getData("providers");
 })
 
-// function for fixed navbar
-function navBarFixed(){
-    let navBar = document.getElementById("navBar");
-    let containerButtonConnection = document.getElementById("container-button-connection");
-    if (window.scrollY > 100) {
-        navBar.style.setProperty("box-shadow", " 0 3px 3px #A886CC");
-        containerButtonConnection.classList.remove("d-none");
-    }else{
-        containerButtonConnection.classList.add("d-none");
-        navBar.style.removeProperty("box-shadow", " 0 2px 2px red");
-
-    }
-}
 // funtion for get data from json 
 async function getData(key) {
     let response = await fetch("./data/data.json");
@@ -137,7 +119,7 @@ async function getData(key) {
         if(key === "services") {
             let services = document.getElementById("services");
             data[key].forEach(link => {
-                let itemLink = `<div class="col-12 col-lg-4 mb-4">
+                let itemLink = `<div class="col-12 col-md-6 col-lg-4 mb-4">
                                     <div class="card overflow-hidden">
                                         <div class=" overflow-hidden">
                                             <img src="${link.image}" class="card-img-top" alt="${link.title}">
@@ -154,7 +136,7 @@ async function getData(key) {
         if(key === "providers") {
             let providers = document.getElementById("providers");
             data[key].forEach(link => {
-                let itemLink = `<div class="col-12 col-lg-4 mb-4">
+                let itemLink = `<div class="col-12 col-md-6 col-lg-4 mb-4">
                                 <div class="card border overflow-hidden">
                                     <div class="overflow-hidden">
                                         <img src="${link.image}" class="card-img-top" alt="${link.title}">
@@ -172,6 +154,26 @@ async function getData(key) {
     }
     
 }
+// function for fixed navbar
+function navBarFixed(){
+    let navBar = document.getElementById("navBar");
+    let containerButtonConnection = document.getElementById("container-button-connection");
+    if (window.scrollY > 100) {
+        navBar.style.setProperty("box-shadow", " 0 3px 3px #A886CC");
+        containerButtonConnection.classList.remove("d-none");
+    }else{
+        containerButtonConnection.classList.add("d-none");
+        navBar.style.removeProperty("box-shadow", " 0 2px 2px red");
+
+    }
+}
+// function for change background image 
+function changeBackground() {
+    let container = document.getElementById("content-header");
+    container.style.backgroundImage = imagesUrl[currentIndex];
+    currentIndex = (currentIndex + 1) % imagesUrl.length;
+}
+
 // show elements when scroll 
 function showElements() {
     const elements = document.querySelectorAll('.content');
@@ -186,4 +188,19 @@ function showElements() {
         element.classList.remove('visible');
       }
     });
-  }
+}
+
+// function for show connection buttons and hidde it
+function showConnectionButtons(){
+    if (!conettionButtons.classList.contains("d-none")) {
+        conettionButtons.classList.add("d-none");
+        conettionButtons.classList.remove("d-flex");
+        let buttonContent = conettionButtons.classList.contains("d-none") ? `<i class="fa-solid fa-comment"></i>` : '<i class="fa-solid fa-xmark"></i>';
+        butttonToShowConettionButtons.innerHTML = buttonContent ;
+    } else {
+        conettionButtons.classList.add("d-flex");
+        conettionButtons.classList.remove("d-none");
+        let buttonContent = conettionButtons.classList.contains("d-none") ? `<i class="fa-solid fa-comment"></i>` : '<i class="fa-solid fa-xmark"></i>';
+        butttonToShowConettionButtons.innerHTML = buttonContent ;
+    }
+} 
