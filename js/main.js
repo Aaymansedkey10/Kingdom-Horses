@@ -1,7 +1,7 @@
 let imagesUrl=[
-    "url(./images/slider-1.webp)",
-    "url(./images/slider-2.webp)",
-    "url(./images/slider-3.webp)",
+    "images/slider-1.jpeg",
+    "images/slider-2.jpeg",
+    "images/slider-3.jpeg",
 ]
 let currentIndex = 0;
 
@@ -9,7 +9,7 @@ window.addEventListener("load", ()=>{
 let butttonToShowConettionButtons = document.getElementById("butttonToShowConettionButtons");
 
 changeBackground();
-setInterval(changeBackground, 1000);
+setInterval(changeBackground, 1500);
 
 butttonToShowConettionButtons.addEventListener("click", showConnectionButtons);
 
@@ -170,9 +170,9 @@ function navBarFixed(){
 // function for change background image 
 function changeBackground() {
     let container = document.getElementById("content-header");
-    container.style.backgroundImage = imagesUrl[currentIndex];
+    container.style.backgroundImage = `url(${imagesUrl[currentIndex]})`
     currentIndex = (currentIndex + 1) % imagesUrl.length;
-}
+  }
 
 // show elements when scroll 
 function showElements() {
@@ -210,25 +210,25 @@ document.addEventListener("contextmenu", (event) => {
     event.preventDefault();
   });
   
-  // Disable key combinations (like F12, Ctrl+Shift+I, etc.)
-  document.addEventListener("keydown", (event) => {
-    // Disable F12
-    if (event.key === "F12") {
-      event.preventDefault();
-    }
-  
-    // Disable Ctrl+Shift+I (Windows/Linux) or Cmd+Option+I (Mac)
-    if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === "I") {
-      event.preventDefault();
-    }
-  
-    // Disable Ctrl+U (View Source)
-    if ((event.ctrlKey || event.metaKey) && event.key === "u") {
-      event.preventDefault();
-    }
-  
-    // Disable Ctrl+Shift+J (Console)
-    if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === "J") {
-      event.preventDefault();
-    }
-  });
+// Disable key combinations (like F12, Ctrl+Shift+I, etc.)
+document.addEventListener("keydown", (event) => {
+// Disable F12
+if (event.key === "F12") {
+    event.preventDefault();
+}
+
+// Disable Ctrl+Shift+I (Windows/Linux) or Cmd+Option+I (Mac)
+if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === "I") {
+    event.preventDefault();
+}
+
+// Disable Ctrl+U (View Source)
+if ((event.ctrlKey || event.metaKey) && event.key === "u") {
+    event.preventDefault();
+}
+
+// Disable Ctrl+Shift+J (Console)
+if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === "J") {
+    event.preventDefault();
+}
+});
