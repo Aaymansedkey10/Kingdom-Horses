@@ -3,20 +3,14 @@
     "development"
   ],
   "hints": {
-    "axe/forms": [
-      "default",
-      {
-        "label": "off"
-      }
-    ],
-    "disown-opener": "off",
     "axe/name-role-value": [
       "default",
       {
-        "link-name": "off",
-        "button-name": "off"
+        "button-name": "off",
+        "link-name": "off"
       }
     ],
+    "disown-opener": "off",
     "meta-viewport": "off"
   }
 }
