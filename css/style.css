@@ -187,7 +187,6 @@ h2 {
 /* start about section */
 .active-content {
     border: 1px solid var(--bg-main-bg-color) !important;
-    transition: var(--transtion);
 }
 .border-bottom-controller{
     border-bottom:1px solid var(--bg-main-bg-color) !important;
