@@ -136,12 +136,12 @@ async function getData(key) {
       let services = document.getElementById("services");
       data[key].forEach((link) => {
         let itemLink = `<div class="col-12 col-md-6 col-lg-4 mb-4">
-                                    <div class="card overflow-hidden">
-                                        <div class=" overflow-hidden">
+                                    <div class="card overflow-hidden position-relative">
+                                        <div class="overflow-hidden">
                                             <img src="${link.image}" class="card-img-top" alt="${link.title}">
                                         </div>
                                         <div class="card-body">
-                                            <h3 class="fw-bold text-center">${link.title}</h3>
+                                            <h3 class="fw-bold text-center p-2 service-title">${link.title}</h3>
                                             <p class="card-text fw-semibold">${link.details}</p>
                                         </div>
                                     </div>
@@ -171,13 +171,13 @@ async function getData(key) {
 // function for fixed navbar
 function navBarFixed() {
   let navBar = document.getElementById("navBar");
-  let containerButtonConnection = document.getElementById(
-    "container-button-connection"
-  );
-  if (window.scrollY > 100) {
+  let containerButtonConnection = document.getElementById("container-button-connection");
+  if (window.scrollY > 200) {
+    navBar.classList.add("nav-fixed");
     navBar.style.setProperty("box-shadow", " 0 3px 3px #A886CC");
     containerButtonConnection.classList.remove("d-none");
   } else {
+    navBar.classList.remove("nav-fixed");
     containerButtonConnection.classList.add("d-none");
     navBar.style.removeProperty("box-shadow", " 0 2px 2px red");
   }
@@ -186,7 +186,15 @@ function navBarFixed() {
 function changeBackground() {
   let container = document.getElementById("content-header");
   container.style.backgroundImage = `url(${imagesUrl[currentIndex]})`;
+  // if (imagesUrl[currentIndex] === "images/slider-1.jpeg") {
+  //   console.log(currentIndex);
+  // } if (imagesUrl[currentIndex] === "images/slider-2.jpeg") {
+  //   console.log(currentIndex);
+  // } if (imagesUrl[currentIndex] === "images/slider-3.jpeg") {
+  //   console.log(currentIndex);
+  // }
   currentIndex = (currentIndex + 1) % imagesUrl.length;
+ 
 }
 
 // show elements when scroll
@@ -251,3 +259,16 @@ document.addEventListener("keydown", (event) => {
     event.preventDefault();
   }
 });
+
+
+// const buttons = document.querySelectorAll(".button-connection");
+
+// // Add pulse effect periodically
+// buttons.forEach(button => {
+//   setInterval(() => {
+//     button.classList.add("pulse");
+//     setTimeout(() => {
+//       button.classList.remove("pulse");
+//     }, 1500);
+//   }, 1000); // Pulse every 5 seconds
+// });
