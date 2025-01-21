@@ -142,7 +142,7 @@ async function getData(key) {
                                         </div>
                                         <div class="card-body">
                                             <h3 class="fw-bold text-center p-2 service-title">${link.title}</h3>
-                                            <p class="card-text fw-semibold">${link.details}</p>
+                                            <h6 class="card-text fw-semibold">${link.details}</h6>
                                         </div>
                                     </div>
                                 </div>`;
