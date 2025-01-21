@@ -1,7 +1,7 @@
 let imagesUrl = [
-  "images/slider-1.jpeg",
-  "images/slider-2.jpeg",
-  "images/slider-3.jpeg",
+  "./images/slider-1.jpeg",
+  "./images/slider-2.jpeg",
+  "./images/slider-3.jpeg",
 ];
 let currentIndex = 0;
 
@@ -142,7 +142,7 @@ async function getData(key) {
                                         </div>
                                         <div class="card-body">
                                             <h3 class="fw-bold text-center p-2 service-title">${link.title}</h3>
-                                            <p class="card-text fw-semibold">${link.details}</p>
+                                            <h4 class="card-text fw-semibold">${link.details}</h4>
                                         </div>
                                     </div>
                                 </div>`;
@@ -159,7 +159,7 @@ async function getData(key) {
                                     </div>
                                     <div class="card-body">
                                     <h3 class="fw-bold text-center">${link.title}</h3>
-                                    <p class="card-text fw-semibold">${link.details}</p>
+                                    <h4 class="card-text fw-semibold">${link.details}</h4>
                                     </div>
                                 </div>
                                 </div>`;
