@@ -179,11 +179,6 @@ h2 {
     background-color: #000000ab;
     height: -webkit-fill-available;
 }
-.offer{
-    width: fit-content;
-    border-radius: 100px 0px 100px 0px ;
-    height: max-content !important;
-}
 .home .content-header .intialize-company {
     position: absolute;
     top: 50%;
