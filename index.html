@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="خيول المملكة شركة نقل أثاث وعفش تقدم خدمات موثوقة وسريعة وآمنة في السعودية. ضمان الجودة والسرعة لراحة العملاء.">
   <meta name="keywords"
@@ -67,11 +67,11 @@
           alt="شعار خيول المملكة وهي أفضل شركةنقل أثاث في جدة و المملكة العربية السعودية" class="logo">
       </a>
       <div class="d-flex gap-3 d-lg-none">
-        <a class="btn button-connection" href="tel:0530403275"><i class="bi bi-telephone"></i></a>
-        <a class="btn button-connection" href="https://api.whatsapp.com/send?phone=9660530403275&text=مرحبا%20بكم" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        <a class="btn" id="button-connection" data-color="#d3d3d3" href="tel:0530403275"><i class="bi bi-telephone"></i></a>
+        <a class="btn" id="button-connection" data-color="#25D366" href="https://api.whatsapp.com/send?phone=9660530403275&text=مرحبا%20بكم" target="_blank"><i class="bi bi-whatsapp"></i></a>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="na fw-boldvbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="bi bi-list"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -80,10 +80,10 @@
           id="nav-bar-list">
 
         </ul>
-        <div class="d-lg-flex gap-lg-4 gap-2 mb-3 mb-lg-0 d-none">
-          <a class="btn button-connection" href="tel:0530403275"><i class="bi bi-telephone"></i></a>
-          <a class="btn button-connection" href="https://api.whatsapp.com/send?phone=9660530403275&text=مرحبا%20بكم"
-            target="_blank"><i class="bi bi-whatsapp"></i></a>
+        <div class="d-lg-flex gap-lg-4 gap-2 m-3 m-lg-0 d-none">
+          <a class="btn" id="button-connection" href="tel:0530403275" data-color="#d3d3d3"><i class="bi bi-telephone"></i></a>
+          <a class="btn" id="button-connection" href="https://api.whatsapp.com/send?phone=9660530403275&text=مرحبا%20بكم"
+            target="_blank" data-color="#25D366"><i class="bi bi-whatsapp"></i></a>
         </div>
       </div>
     </div>
@@ -91,34 +91,30 @@
   <!-- end navbar section  -->
   <!-- start home section  -->
   <header class="home" id="main">
-    <div class="content-header" id="content-header">
-      <div class="container-content">
-        <div class="intialize-company text-white text-center">
-          <h1 class="fw-bold"> خيول المملكه لنقل العفش مع الفك والتركيب والتغليف فك وتركيب جميع انواع غرف النوم فك وتركيب مكيفات اسبيلت فك وتركيب المطابخ التفصيل يتوفر النقل لجميع مناطق المملكة يمكنك  الحصول علي 50% كخصم لنقل أثاثك.</h1>
-          <!-- <p class="fw-bold">نحن نقوم بتقديم جميع خدمات نقل الاثاث شامله فك وتركيب غرف النوم وفك وتركيب مطابخ تفصيل
-            وتركيب وفك وتركيب مكيفات اسبليت وفك وتركيب ستاير.</p> -->
-          <a class="btn rounded-0 fw-semibold px-3 button-conection-with-us text-center"
-            href="tel:0530403275">0530403275</a>
-            <!-- <div class="offer text-center bg-danger">
-              <p>يمكنك التواصل لمعرفة خصوماتنا</p>
-              <a class="btn rounded-0 fw-semibold px-3 button-conection-with-us text-center"
-                href="tel:0530403275">0530403275</a>
-            </div> -->
-        </div>
-      </div>
-    </div>
-    <div class="container-button-connection d-none px-2 mx-3" id="container-button-connection">
-      <div class="d-flex align-items-center justify-content-between container-button-top-connect">
-        <div class="position-fixed bottom-0 mb-5">
-          <div class="conettion-buttons d-flex flex-column align-items-start justify-content-center gap-3 mb-lg-2" id="conettionButtons">
-            <a class="btn button-connection" href="tel:0530403275" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip text"><i class="bi bi-telephone"></i></a>
-            <a class="btn button-connection" href="https://api.whatsapp.com/send?phone=9660530403275&text=مرحبا%20بكم" target="_blank"><i class="bi bi-whatsapp"></i></a>
+      <div class="content-header" id="content-header">
+        <div class="container-content">
+          <div class="intialize-company text-white text-center">
+            <h1 class="fw-bold"> خيول المملكه لنقل العفش مع الفك والتركيب والتغليف فك وتركيب جميع انواع غرف النوم فك وتركيب مكيفات اسبيلت فك وتركيب المطابخ التفصيل يتوفر النقل لجميع مناطق المملكة يمكنك  الحصول علي 50% كخصم لنقل أثاثك.</h1>
+            <a class="rounded-0 fw-semibold px-3 button-conection-with-us text-center"
+              href="tel:0530403275">0530403275</a>
           </div>
-          <button class="btn rounded-circle button-show-connection" id="butttonToShowConettionButtons"><i class="fa-solid fa-xmark"></i></button>
         </div>
-        <a href="#main" class="btn rounded-circle position-fixed bottom-0 mb-md-5 button-to-top"><i class="fa-solid fa-arrow-up"></i></a>
       </div>
-    </div>
+      <div class="container-button-connection">
+        <div class="position-fixed bottom-0">
+          <div class="d-flex flex-column align-items-center gap-2 continaer-box">
+            <div class="d-flex flex-column align-items-center gap-2" id="conettion-buttons-container">
+              <a class="btn" id="button-connection" href="tel:0530403275" data-color="#d3d3d3"><i class="bi bi-telephone"></i></a>
+              <a class="btn" id="button-connection" href="https://api.whatsapp.com/send?phone=9660530403275&text=مرحبا%20بكم"
+                target="_blank" data-color="#25D366"><i class="bi bi-whatsapp"></i></a>
+            </div>
+              <button class="btn rounded-circle button-show-connection" id="butttonToShowConettionButtons"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </div>
+        <div class="position-fixed botom-0">
+          <a href="#main" class="btn rounded-circle position-fixed bottom-0 start-0 button-to-top"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+      </div>
   </header>
   <!-- end home section  -->
   <!-- start services section -->
@@ -146,7 +142,7 @@
         </div>
         <div class="col-12">
           <div class="about-content">
-            <div class="controllers" id="controllers"> </div>
+            <div class="controllers" id="controllers"></div>
           </div>
         </div>
       </div>
@@ -179,10 +175,9 @@
           <div class="mb-3 border-under-bottom"></div>
         </div>
         <div class="col-12">
-          <div class="map w-100">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3708.9773672007286!2d39.17596382495098!3d21.62580558017717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDM3JzMyLjkiTiAzOcKwMTAnMjQuMiJF!5e0!3m2!1sar!2seg!4v1735938144778!5m2!1sar!2seg"
-              height="450" width="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          <div class="map">
+            <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3708.9773672007286!2d39.17596382495098!3d21.62580558017717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDM3JzMyLjkiTiAzOcKwMTAnMjQuMiJF!5e0!3m2!1sar!2seg!4v1735938144778!5m2!1sar!2seg"
+              height="450" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
@@ -202,23 +197,22 @@
         </div>
         <div class="col-12 text-center">
           <!-- Facebook -->
-          <a class="btn button-connection m-1"
-            href="https://www.facebook.com/profile.php?id=61570674961245&mibextid=ZbWKwL" target="_blank"><i
-              class="fab fa-facebook-f"></i></a>
+          <a id="button-connection" class="btn"
+            href="https://www.facebook.com/profile.php?id=61570674961245&mibextid=ZbWKwL" target="_blank" data-color="#1877F2"><i class="fab fa-facebook-f"></i></a>
           <!-- tiktok -->
-          <a class="btn button-connection m-1" href="https://www.tiktok.com/@khyol_nakelafsh?_t=ZS-8t5yj7iuP1E&_r=1"
-            target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a id="button-connection" class="btn mx-1" href="https://www.tiktok.com/@khyol_nakelafsh?_t=ZS-8t5yj7iuP1E&_r=1"
+            target="_blank" data-color="#010101d6"><i class="fab fa-tiktok"></i></a>
           <!-- snapchat -->
-          <a class="btn button-connection m-1" href="https://snapchat.com/t/FqwaeC4V" target="_blank"><i
+          <a id="button-connection" class="btn" href="https://snapchat.com/t/FqwaeC4V" target="_blank" data-color="#b0ae00"><i
               class="fab fa-snapchat"></i></a>
           <!-- Instagram -->
-          <a class="btn button-connection m-1" href="https://www.instagram.com/shrk_lmhnds?igsh=cHJ2NGIwNDIyOXlw"
-            target="_blank"><i class="fab fa-instagram"></i></a>
+          <a id="button-connection" class="btn mx-1" href="https://www.instagram.com/shrk_lmhnds?igsh=cHJ2NGIwNDIyOXlw"
+            target="_blank" data-color="#E1306C"><i class="fab fa-instagram"></i></a>
           <!-- whatsapp -->
-          <a class="btn button-connection" href="https://api.whatsapp.com/send?phone=9660530403275&text=مرحبا%20بكم"
-            target="_blank"><i class="bi bi-whatsapp"></i></a>
+          <a id="button-connection" class="btn" href="https://api.whatsapp.com/send?phone=9660530403275&text=مرحبا%20بكم"
+            target="_blank" data-color="#25D366"><i class="bi bi-whatsapp"></i></a>
           <!-- mobile  -->
-          <a class="btn button-connection" href=" tel:0530403275"><i class="bi bi-telephone"></i></a>
+          <a id="button-connection" class="btn ms-1" href="tel:0530403275" data-color="#d3d3d3"><i class="bi bi-telephone"></i></a>
         </div>
       </div>
     </div>

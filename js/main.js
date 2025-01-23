@@ -1,7 +1,8 @@
 let imagesUrl = [
-  "./images/slider-1.jpeg",
-  "./images/slider-2.jpeg",
-  "./images/slider-3.jpeg",
+  "./images/s-1.jpeg",
+  "./images/s-2.jpeg",
+  "./images/s-3.jpeg",
+  "./images/s-4.jpeg",
 ];
 let currentIndex = 0;
 
@@ -9,7 +10,7 @@ window.addEventListener("load", () => {
   let butttonToShowConettionButtons = document.getElementById(
     "butttonToShowConettionButtons"
   );
-
+  changeColorConnectionsButton();
   changeBackground();
   setInterval(changeBackground, 1500);
 
@@ -40,7 +41,7 @@ async function getData(key) {
       let navBar = document.getElementById("nav-bar-list");
       data[key].forEach((link) => {
         let itemLink = `<li class="nav-item">
-                                    <a class="nav-link fw-bold" href="${link.link}">${link.title}</a>
+                                    <a class="nav-link fw-bold text-white" href="${link.link}">${link.title}</a>
                                 </li>`;
         navBar.innerHTML += itemLink;
       });
@@ -171,28 +172,25 @@ async function getData(key) {
 // function for fixed navbar
 function navBarFixed() {
   let navBar = document.getElementById("navBar");
-  let containerButtonConnection = document.getElementById("container-button-connection");
-  if (window.scrollY > 200) {
+  let links = document.querySelectorAll(".nav-link");
+  if (window.scrollY > 100) {
     navBar.classList.add("nav-fixed");
-    navBar.style.setProperty("box-shadow", " 0 3px 3px #A886CC");
-    containerButtonConnection.classList.remove("d-none");
+    links.forEach((link) => {
+      link.classList.remove('text-white');
+      link.classList.add('active');
+    });
   } else {
     navBar.classList.remove("nav-fixed");
-    containerButtonConnection.classList.add("d-none");
-    navBar.style.removeProperty("box-shadow", " 0 2px 2px red");
+    links.forEach((link) => {
+      link.classList.remove('active');
+      link.classList.add('text-white');
+    });
   }
 }
 // function for change background image
 function changeBackground() {
   let container = document.getElementById("content-header");
   container.style.backgroundImage = `url(${imagesUrl[currentIndex]})`;
-  // if (imagesUrl[currentIndex] === "images/slider-1.jpeg") {
-  //   console.log(currentIndex);
-  // } if (imagesUrl[currentIndex] === "images/slider-2.jpeg") {
-  //   console.log(currentIndex);
-  // } if (imagesUrl[currentIndex] === "images/slider-3.jpeg") {
-  //   console.log(currentIndex);
-  // }
   currentIndex = (currentIndex + 1) % imagesUrl.length;
  
 }
@@ -215,23 +213,26 @@ function showElements() {
 
 // function for show connection buttons and hidde it
 function showConnectionButtons() {
-  if (!conettionButtons.classList.contains("d-none")) {
-    conettionButtons.classList.add("d-none");
-    conettionButtons.classList.remove("d-flex");
-    let buttonContent = conettionButtons.classList.contains("d-none")
-      ? `<i class="fa-solid fa-comment"></i>`
-      : '<i class="fa-solid fa-xmark"></i>';
-    butttonToShowConettionButtons.innerHTML = buttonContent;
+  let conettionButtonsContainer = document.getElementById("conettion-buttons-container");
+  let button = document.getElementById("butttonToShowConettionButtons");
+  if (!conettionButtonsContainer.classList.contains("d-none")) {
+    conettionButtonsContainer.classList.add("d-none");
+    conettionButtonsContainer.classList.remove("d-flex");
+    button.innerHTML = `<i class="fa-solid fa-comment"></i>`;
   } else {
-    conettionButtons.classList.add("d-flex");
-    conettionButtons.classList.remove("d-none");
-    let buttonContent = conettionButtons.classList.contains("d-none")
-      ? `<i class="fa-solid fa-comment"></i>`
-      : '<i class="fa-solid fa-xmark"></i>';
-    butttonToShowConettionButtons.innerHTML = buttonContent;
+    conettionButtonsContainer.classList.add("d-flex");
+    conettionButtonsContainer.classList.remove("d-none");
+    button.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
   }
 }
-
+// change the color 
+function changeColorConnectionsButton(){
+  let conettionButtons = document.querySelectorAll("#button-connection");
+  conettionButtons.forEach((button)=>{
+    let color = button.getAttribute("data-color");
+    button.style.backgroundColor = color;
+  })
+}
 // Disable right-click
 document.addEventListener("contextmenu", (event) => {
   event.preventDefault();
@@ -259,16 +260,3 @@ document.addEventListener("keydown", (event) => {
     event.preventDefault();
   }
 });
-
-
-// const buttons = document.querySelectorAll(".button-connection");
-
-// // Add pulse effect periodically
-// buttons.forEach(button => {
-//   setInterval(() => {
-//     button.classList.add("pulse");
-//     setTimeout(() => {
-//       button.classList.remove("pulse");
-//     }, 1500);
-//   }, 1000); // Pulse every 5 seconds
-// });
