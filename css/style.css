@@ -77,8 +77,15 @@ body {
     z-index: 10;
 }
 h2 {
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 40px !important;
+    font-weight: 600 !important;
+}
+ul{
+    list-style: inside;
+    list-style-position: inside
+}
+ul , ol , dl {
+    padding: 0px 20px !important;
 }
 .border-under-bottom {
     width: 100px;
@@ -298,12 +305,16 @@ footer .author-connection a {
 }
 /* end footer section  */
 
+
 /* start media query */
 @media only screen and (max-width: 767px) {
+    h2 {
+        font-size: 30px !important;
+        font-weight: 600 !important;
+    }
     /* start navbar  */
     .navbar {
         top: -2px !important;
-        height: max-content !important;
     }
     /* start home section   */
     .home .content-header{
@@ -332,6 +343,9 @@ footer .author-connection a {
 }
 
 @media only screen and (min-width: 768px) {
+    h2 {
+        font-size: 30px !important;
+    }
     .conettion-buttons {
         margin-bottom: 15px !important;
     }

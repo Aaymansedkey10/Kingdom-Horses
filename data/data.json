@@ -10,27 +10,27 @@
         {
             "id": 2,
             "title": "خدماتنا",
-            "link": "#service"
+            "link": "/pages/services.html"
         },
         {
             "id": 3,
             "title": "من نحن",
-            "link": "#about"
+            "link": "/pages/about.html"
         },
         {
             "id": 4,
             "title": "نوفر لك",
-            "link": "#we-provide"
+            "link": "/pages/our-providers.html"
         },
         {
             "id": 4,
             "title": "مناطقنا",
-            "link": "#area"
+            "link": "/pages/areas.html"
         },
         {
             "id": 5,
             "title": "اتصل بنا",
-            "link": "#contact"
+            "link": "/pages/contact.html"
         }
     ],
     "aboutUs": [
