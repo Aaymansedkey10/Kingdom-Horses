@@ -1,38 +1,6 @@
 {
     "status": true,
     "message": "تم الحصول على البيانات بنجاح",
-    "navBar": [
-        {
-            "id": 1,
-            "title": "الرئيسية",
-            "link": "/"
-        },
-        {
-            "id": 2,
-            "title": "خدماتنا",
-            "link": "./pages/services.html"
-        },
-        {
-            "id": 3,
-            "title": "من نحن",
-            "link": "./pages/about.html"
-        },
-        {
-            "id": 4,
-            "title": "نوفر لك",
-            "link": "./pages/our-providers.html"
-        },
-        {
-            "id": 4,
-            "title": "مناطقنا",
-            "link": "./pages/areas.html"
-        },
-        {
-            "id": 5,
-            "title": "اتصل بنا",
-            "link": "./pages/contact.html"
-        }
-    ],
     "aboutUs": [
         {
             "id": 1,

@@ -37,18 +37,18 @@ async function getData(key) {
   let data = await response.json();
 
   if (data !== null && data.status === true) {
-    if (key === "navBar") {
-      let navBar = document.getElementById("nav-bar-list");
-      if (navBar) {
+    // if (key === "navBar") {
+    //   let navBar = document.getElementById("nav-bar-list");
+    //   if (navBar) {
 
-        data[key].forEach((link) => {
-          let itemLink = `<li class="nav-item">
-                                            <a class="nav-link fw-bold text-white" href="${link.link}">${link.title}</a>
-                                        </li>`;
-          navBar.innerHTML += itemLink;
-        });
-      }
-    }
+    //     data[key].forEach((link) => {
+    //       let itemLink = `<li class="nav-item">
+    //                                         <a class="nav-link fw-bold text-white" href="${link.link}">${link.title}</a>
+    //                                     </li>`;
+    //       navBar.innerHTML += itemLink;
+    //     });
+    //   }
+    // }
     if (key === "aboutUs") {
       let aboutUs = document.getElementById("controllers");
       if (aboutUs) {
