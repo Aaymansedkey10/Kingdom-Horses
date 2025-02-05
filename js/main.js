@@ -1,8 +1,8 @@
 let imagesUrl = [
-  "./images/s-1.jpeg",
-  "./images/s-2.jpeg",
-  "./images/s-3.jpeg",
-  "./images/s-4.jpeg",
+  "../images/s-1.jpeg",
+  "../images/s-2.jpeg",
+  "../images/s-3.jpeg",
+  "../images/s-4.jpeg",
 ];
 let currentIndex = 0;
 
@@ -32,7 +32,7 @@ window.addEventListener("scroll", () => {
 });
 // funtion for get data from json
 async function getData(key) {
-  let response = await fetch("./data/data.json");
+  let response = await fetch("../data/data.json");
   let data = await response.json();
 
   if (data !== null && data.status === true) {
