@@ -1,6 +1,6 @@
 let imagesUrl = [
   "https://raw.githubusercontent.com/Aaymansedkey10/Kingdom-Horses/main/images/s-1.jpeg",
-  "https://raw.githubusercontent.com/Aaymansedkey10/Kingdom-Horses/main/../images/s-2.jpeg",
+  "https://raw.githubusercontent.com/Aaymansedkey10/Kingdom-Horses/main/images/s-2.jpeg",
   "https://raw.githubusercontent.com/Aaymansedkey10/Kingdom-Horses/main/images/s-3.jpeg",
   "https://raw.githubusercontent.com/Aaymansedkey10/Kingdom-Horses/main/images/s-4.jpeg",
 ];
@@ -37,18 +37,6 @@ async function getData(key) {
   let data = await response.json();
 
   if (data !== null && data.status === true) {
-    // if (key === "navBar") {
-    //   let navBar = document.getElementById("nav-bar-list");
-    //   if (navBar) {
-
-    //     data[key].forEach((link) => {
-    //       let itemLink = `<li class="nav-item">
-    //                                         <a class="nav-link fw-bold text-white" href="${link.link}">${link.title}</a>
-    //                                     </li>`;
-    //       navBar.innerHTML += itemLink;
-    //     });
-    //   }
-    // }
     if (key === "aboutUs") {
       let aboutUs = document.getElementById("controllers");
       if (aboutUs) {
